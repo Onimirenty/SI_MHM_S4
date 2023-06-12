@@ -1,0 +1,28 @@
+Le compte des associés en comptabilité fait référence à un 
+compte qui enregistre les montants investis par les associés 
+dans l'entreprise. Ce compte est également connu sous le nom 
+de "compte de capital des associés" ou "compte de participation
+ des associés".
+
+Lorsqu'une entreprise est créée, les associés peuvent apporter 
+des fonds ou des biens en échange de parts sociales ou d'actions.
+Le montant investi par chaque associé est enregistré dans
+le compte des associés. Ce compte est généralement créditeur 
+car il représente l'argent investi par les associés dans 
+l'entreprise.
+
+Les mouvements sur le compte des associés comprennent notamment
+ les apports en capital, les prélèvements, les dividendes 
+ distribués et les bénéfices non distribués. Les prélèvements 
+ sont des retraits effectués par les associés sur le compte de 
+ l'entreprise, tandis que les dividendes distribués sont des 
+ paiements effectués aux actionnaires pour récompenser leur 
+ investissement.
+
+En fin d'exercice comptable, le solde du compte des associés 
+est reporté au bilan de l'entreprise dans la section 
+"capitaux propres". Si les bénéfices n'ont pas été distribués, 
+ils sont également reportés dans cette section. Si les pertes 
+ont été enregistrées, elles sont déduites du solde du compte 
+des associés et peuvent réduire la valeur des capitaux 
+propres de l'entreprise.

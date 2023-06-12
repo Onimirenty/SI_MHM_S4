@@ -1,0 +1,11 @@
+++clarification
+    Ao @ delete controler tsy aiko/reglena hoe makaiza apres delete =>select
+    le load -> view ao @ formulaire controleur
+    mandeha aiza rehefa apres mi insert facture
+++correction 
+    la table scan n'existe pas dans controleur/insert
+    changer la view comptabilite en infocomptabilite
+++ajout
+    page view erreur insert et delete 
+
+
