@@ -22,13 +22,14 @@ class Welcome extends CI_Controller {
 	{
 		$identite_entreprise = $this->db->get('identite_Entreprise')->result();
         $devise = $this->db->get('Devise')->result();
-
+        
         $data['identite_entreprise'] = $identite_entreprise;
         $data['devise'] = $devise;
 		$data['content'] = "select/contact";
 		$data['categorie'] = "S";
 		$this->load->view('templates/template',$data);
 		
-	}	
+	}
+		
 	
 }
