@@ -214,6 +214,12 @@ class Select extends CI_Controller
         $data['content'] = "select/diagrame";
         $this->load->view('templates/template', $data);
     }
+    public function loginSign()
+    {
+        $data['categorie']="S";
+        $data['content'] = "select/loginSign";
+        $this->load->view('templates/template', $data);
+    }
 }
 
 

@@ -543,3 +543,30 @@ VALUES ('Produit 1', 25.00, 100,'121212');
 --  insert into PieceJournale values (1,1,2,1,'20100405',1205,1205,'intitule no1',1);
 
 
+-- ------------------- New base a partir de 12 janvier 2023 ----------------
+-- Table client_compte
+CREATE TABLE client_compte (
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(255) NOT NULL,
+    email varchar(255) NOT NULL,
+    mdp VARCHAR(255) NOT NULL
+);
+
+-- Table admin_compte
+CREATE TABLE admin_compte (
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(255) NOT NULL,
+    email varchar(255) NOT NULL,
+    mdp VARCHAR(255) NOT NULL
+);
+INSERT INTO client_compte (nom, email, mdp) VALUES
+('dipex', 'dipex@gmail.com', '1234'),
+('MHM', 'mhm@gmail.com', '4321');
+
+-- Insertions dans la table admin_compte
+INSERT INTO admin_compte (nom, email, mdp) VALUES
+('mirenty', 'mirentybg4@gmail.com', '0000'),
+('mickael', 'mickael.gaiden@gmail.com', '000'),
+('hasina', 'handrianasinoro@gmail.com', '00');
+
+
