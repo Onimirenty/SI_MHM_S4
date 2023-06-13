@@ -64,19 +64,19 @@ CREATE TABLE transactions
 CREATE TABLE Produit (
     id INTEGER AUTO_INCREMENT PRIMARY KEY ,
     nomProduit VARCHAR(255),
-    PrixUnitaire DECIMAL(10,2),
+    prixUnitaire DECIMAL(10,2),
     nombre INTEGER,
     dates date NOT NULL
 );
 CREATE TABLE Stock(
     id INTEGER AUTO_INCREMENT PRIMARY KEY ,
     nomProduit VARCHAR(255),
-    PrixUnitaire DECIMAL(10,2),
+    prixUnitaire DECIMAL(10,2),
     nombre INTEGER,
     dates date NOT NULL
 );
 create view Stocks_view as
-    select id as idProduit,nomProduit,PrixUnitaire,nombre,(PrixUnitaire * nombre) as valeurTotal,dates 
+    select id as idProduit,nomProduit,prixUnitaire,nombre,(prixUnitaire * nombre) as valeurTotal,dates 
     from Produit;
 
 
@@ -499,24 +499,24 @@ VALUES ('20220101', '20221231', 3);
 -- INSERT INTO Journal (nom)
 -- VALUES ('Journal Banque');
 
-INSERT INTO Produit (nomProduit, PrixUnitaire, nombre,dates)
+INSERT INTO Produit (nomProduit, prixUnitaire, nombre,dates)
 VALUES ('Produit 1', 25.00, 100,'121212');
--- INSERT INTO Stock (nomProduit, PrixUnitaire, nombre,dates)
+-- INSERT INTO Stock (nomProduit, prixUnitaire, nombre,dates)
 -- VALUES ('Produit 1', 25.00, 100,'121212');
 
--- INSERT INTO Produit (nomProduit, PrixUnitaire, nombre,dates)
+-- INSERT INTO Produit (nomProduit, prixUnitaire, nombre,dates)
 -- VALUES ('Produit 2', 35.00, 75,'121212');
 
--- INSERT INTO Produit (nomProduit, PrixUnitaire, nombre,dates)
+-- INSERT INTO Produit (nomProduit, prixUnitaire, nombre,dates)
 -- VALUES ('Produit 3', 45.00, 50,'121212');
 
--- INSERT INTO Produit (nomproduit, PrixUnitaire, nombre,dates)
+-- INSERT INTO Produit (nomproduit, prixUnitaire, nombre,dates)
 -- VALUES ('Produit A', 20, 500,'121212');
 
--- INSERT INTO Produit (nomproduit, PrixUnitaire, nombre,dates)
+-- INSERT INTO Produit (nomproduit, prixUnitaire, nombre,dates)
 -- VALUES ('Produit B', 30.00, 750,'121212');
 
--- INSERT INTO Produit (nomproduit, PrixUnitaire, nombre,dates)
+-- INSERT INTO Produit (nomproduit, prixUnitaire, nombre,dates)
 -- VALUES ('Produit C', 40.00, 300,'121212');
 
 --  insert into tva values (1,20);
@@ -525,24 +525,24 @@ VALUES ('Produit 1', 25.00, 100,'121212');
 
 --  insert into PieceJournale values (1,1,2,1,'20100405',1205,1205,'intitule no1',1);
 
-CREATE TABLE Facture (
-    id INTEGER AUTO_INCREMENT PRIMARY KEY ,
-    idCompte INTEGER,
-    idproduit INTEGER,
-    NumFacture VARCHAR(255),
-    vendeur VARCHAR(255),
-    acheteur VARCHAR(255),
-    idContact INT,
-    ModePayement VARCHAR(255),
-    prix NUMERIC(10,2),
-    nombre INT,
-    dates date null,
+-- CREATE TABLE Facture (
+--     id INTEGER AUTO_INCREMENT PRIMARY KEY ,
+--     idCompte INTEGER,
+--     idproduit INTEGER,
+--     numFacture VARCHAR(255),
+--     vendeur VARCHAR(255),
+--     acheteur VARCHAR(255),
+--     idContact INT,
+--     modePayement VARCHAR(255),
+--     prix NUMERIC(10,2),
+--     nombre INT,
+--     dates date null,
     
-    FOREIGN KEY (idContact) REFERENCES Contact(id),
-    FOREIGN KEY (idproduit) REFERENCES Produit(id),
-    FOREIGN KEY (idCompte) REFERENCES Compte(id)
+--     FOREIGN KEY (idContact) REFERENCES Contact(id),
+--     FOREIGN KEY (idproduit) REFERENCES Produit(id),
+--     FOREIGN KEY (idCompte) REFERENCES Compte(id)
 
-);
+-- );
 -- ------------------- New base a partir de 12 janvier 2023 ----------------
 -- Table client_compte
 CREATE TABLE client_compte (
@@ -570,32 +570,33 @@ INSERT INTO admin_compte (nom, email, mdp) VALUES
 ('hasina', 'handrianasinoro@gmail.com', '00');
 
 
-CREATE TABLE Facture (
+CREATE TABLE facture (
     id INTEGER AUTO_INCREMENT PRIMARY KEY ,
-    idCompte INTEGER,
+    designation VARCHAR(255) NOT NULL,
+    numFacture VARCHAR(255) NOT NULL UNIQUE,
     idproduit INTEGER,
-    NumFacture VARCHAR(255),
-    vendeur VARCHAR(255),
-    acheteur VARCHAR(255),
-    idContact INT,
-    ModePayement VARCHAR(255),
-    prix NUMERIC(10,2),
-    nombre INT,
-    dates date null,
+    idSociete INTEGER,
+    idContact INTEGER,
+    modePayement VARCHAR(255),
+    unite VARCHAR(25) NOT NULL,
+    prixUnitaire NUMERIC(10,2),
+    quantite INT NOT NULL,
+    montant NUMERIC(10,2) GENERATED ALWAYS AS (prixUnitaire * quantite) STORED,
+    dates DATE NOT NULL,
     
     FOREIGN KEY (idContact) REFERENCES Contact(id),
     FOREIGN KEY (idproduit) REFERENCES Produit(id),
-    FOREIGN KEY (idCompte) REFERENCES Compte(id)
-
+    FOREIGN KEY (idSociete) REFERENCES identite_Entreprise(id)
 );
 
-INSERT INTO Facture (idcompte,NumFacture, dates,prix)
-VALUES 
-(7, 'FAC-001', '2023-03-28', 5000.00),
-(7, 'FAC-002', '2023-03-29', 7000.00),
-(6, 'FAC-003', '2023-03-30', 10000.00),
-(6, 'FAC-004', '2023-03-31', 15000.00),
-(7, 'FAC-005', '2023-03-31', 2000.00);
+INSERT INTO facture (designation, numFacture, idproduit, idSociete, idContact, modePayement, unite, prixUnitaire, quantite, dates)
+                VALUES ('Facture 1', 'FAC-001'    , 1     ,   1       ,           1, 'Carte de crédit', 'unité', 10.99, 5, '2023-01-01');
+
+INSERT INTO facture (designation, numFacture, idproduit, idSociete, idContact, modePayement, unite, prixUnitaire, quantite, dates)
+VALUES ('Facture 2', 'FAC-002', 2, 2, 2, 'Virement bancaire', 'unité', 15.99, 3, '2023-02-01');
+
+INSERT INTO facture (designation, numFacture, idproduit, idSociete, idContact, modePayement, unite, prixUnitaire, quantite, dates)
+VALUES ('Facture 3', 'FAC-003', 3, 2, 1, 'Chèque', 'unité', 20.99, 2, '2023-03-01');
 
 create table TVA
 (

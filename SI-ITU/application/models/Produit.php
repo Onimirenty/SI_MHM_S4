@@ -71,11 +71,6 @@ class Produit extends CI_model{
         $query = $this->db->get('produits');
         return $query->row(); // Retourne le produit sous forme d'objet
     }
-    public function getProduitById($id) {
-        $query = $this->db->get_where('produits', array('id' => $id)); // Supposons que votre table s'appelle 'produits'
-    
-        return $query->row();
-    }
     
     public function getAllProduit() {
         $query = $this->db->get('produits');

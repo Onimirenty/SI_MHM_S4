@@ -28,26 +28,29 @@ $burl = site_url();
         <input type="number" step="0.01" id="montant_max" name="montant_max"><br>
 
         <label for="produit">Produit :</label>
-        <select name="idProduit"></select>
-            <?php 
-            foreach ($produits as $produit) 
-            {
-            ?>
-                <option value="<?php echo $produit->id; ?>">
-                    <?php echo $produit->nom; ?>
-                </option>
+        <select id="produit" name="idProduit">
             <?php
+            foreach ($produits as $produit) {
+                ?>
+                <option value="<?php echo $produit->id; ?>">
+                    <?php echo $produit->nomProduit; ?>
+                </option>
+                <?php
             }
             ?>
-        </select>
-        <input type="text" id="produit" name="produit"><br>
-
+        </select><br>
         <label for="client">Client :</label>
-        <input type="text" id="client" name="client"><br>
-
-        <label for="contact">Contact :</label>
-        <input type="text" id="contact" name="contact"><br>
-
+        <select id="client" name="idCLient">
+            <?php
+            foreach ($clients as $client) {
+                ?>
+                <option value="<?php echo $client->id; ?>">
+                    <?php echo $client->nomSociete; ?>
+                </option>
+                <?php
+            }
+            ?>
+        </select><br>
         <input type="submit" value="Rechercher">
     </form>
 </body>

@@ -53,8 +53,8 @@ class Dao extends CI_Model
         }
         return $array;
     }
-
-    public function getById($tableName, $id) {
+    
+    public function getByIdAsArray($tableName, $id) {
         $pg = new Dao();
         $result = $pg->query("SELECT * FROM {$tableName} WHERE id={$id}");
         $array = array();
@@ -63,7 +63,17 @@ class Dao extends CI_Model
         }
         return $array;
     }
-
+    public function getById($tableName, $id) {
+        $this->db->where('id', $id);
+        $query = $this->db->get($tableName);
+    
+        if ($query && $query->num_rows() > 0) {
+            return $query->row();
+        }
+    
+        return null;
+    }
+    
     public function getByColumn($tableName, $columnName) {
         $pg = new Dao();
         $result = $pg->query("SELECT {$columnName} FROM {$tableName}");

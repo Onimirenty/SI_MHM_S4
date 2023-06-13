@@ -64,7 +64,7 @@ class Utilitaire extends CI_Model
     public function rechercherFactures($date_debut, $date_fin, $num_facture, $montant_min, $montant_max,$idProduit)
     {
         $this->db->select('*');
-        $this->db->from('Facture');
+        $this->db->from('facture');
     
         $date_debut = empty($date_debut) ? '1970-01-01' : $date_debut;
         $date_fin = empty($date_fin) ? '2050-01-01' : $date_fin;
@@ -73,25 +73,32 @@ class Utilitaire extends CI_Model
         $this->db->where('dates <=', $date_fin);
     
         if (!empty($num_facture)) {
-            $this->db->like('NumFacture', $num_facture);
+            $this->db->like('numFacture', $num_facture);
         }
         $trillion = bcpow('10', '12');
-        $montant_min = empty($montant_min) ? 0 : $montant_min;
+        $montant_min = empty($montant_min) ? 1 : $montant_min;
         $montant_max = empty($montant_max) ? $trillion : $montant_max;
         
         if (!empty($montant_min) && $montant_min >= 0) {
-            $this->db->where('prix >=', $montant_min);
+            $this->db->where('montant >=', $montant_min);
         } else {
-            show_error("valeur negative non permit");
+            show_error("valeur negative non permit sur le montant minimum");
         }
     
         if (!empty($montant_max) && $montant_max >= 0) {
-            $this->db->where('prix <=', $montant_max);
+            $this->db->where('montant <=', $montant_max);
         } else {
-            show_error("valeur negative non permit");
+            show_error("valeur negative non permit sur le montant maximum");
         }
-    
+        if(!empty($idProduit) && $idProduit > 0) {
+            $this->db->where('idProduit', $idProduit);
+        }
+        
+        if(!empty($idSociete) && $idSociete > 0) {
+            $this->db->where('idSociete', $idSociete);
+        }
         $query = $this->db->get();
+
         return $query->result();
     }
     
