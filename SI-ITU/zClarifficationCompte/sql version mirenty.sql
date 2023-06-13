@@ -260,24 +260,7 @@ CREATE TABLE journalcaisse (
     Credits  DECIMAL(10,2)
 );
 
-CREATE TABLE Facture (
-    id INTEGER AUTO_INCREMENT PRIMARY KEY ,
-    idCompte INTEGER,
-    idproduit INTEGER,
-    NumFacture VARCHAR(255),
-    vendeur VARCHAR(255),
-    acheteur VARCHAR(255),
-    idContact INT,
-    ModePayement VARCHAR(255),
-    prix NUMERIC(10,2),
-    nombre INT,
-    dates date null,
 
-    FOREIGN KEY (idContact) REFERENCES Contact(id),
-    FOREIGN KEY (idproduit) REFERENCES Produit(id),
-    FOREIGN KEY (idCompte) REFERENCES Compte(id)
-
-);
 
 -- CREATE TABLE PieceJournale (
 --     id INTEGER AUTO_INCREMENT PRIMARY KEY ,
@@ -570,3 +553,29 @@ INSERT INTO admin_compte (nom, email, mdp) VALUES
 ('hasina', 'handrianasinoro@gmail.com', '00');
 
 
+CREATE TABLE Facture (
+    id INTEGER AUTO_INCREMENT PRIMARY KEY ,
+    idCompte INTEGER,
+    idproduit INTEGER,
+    NumFacture VARCHAR(255),
+    vendeur VARCHAR(255),
+    acheteur VARCHAR(255),
+    idContact INT,
+    ModePayement VARCHAR(255),
+    prix NUMERIC(10,2),
+    nombre INT,
+    dates date null,
+    
+    FOREIGN KEY (idContact) REFERENCES Contact(id),
+    FOREIGN KEY (idproduit) REFERENCES Produit(id),
+    FOREIGN KEY (idCompte) REFERENCES Compte(id)
+
+);
+
+INSERT INTO Facture (idcompte,NumFacture, dates,prix)
+VALUES 
+(7, 'FAC-001', '2023-03-28', 5000.00),
+(7, 'FAC-002', '2023-03-29', 7000.00),
+(6, 'FAC-003', '2023-03-30', 10000.00),
+(6, 'FAC-004', '2023-03-31', 15000.00),
+(7, 'FAC-005', '2023-03-31', 2000.00);

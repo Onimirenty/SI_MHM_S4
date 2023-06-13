@@ -7,13 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!----======== CSS ======== -->
-    <link rel="stylesheet" href="<?php echo $burl ?>/assets/css/style.css">
-
+    <link rel="stylesheet" href="<?php echo $burl ?>assets/css/style.css">
+    
     <!----===== Boxicons CSS ===== -->
-    <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="<?php echo $burl ?>/assets/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="<?php echo $burl ?>/assets/css/left.css">
-    <link rel="stylesheet" href="<?php echo $burl ?>/assets/css/style.css">
+    <!-- <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="<?php echo $burl ?>assets/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $burl ?>assets/css/left.css">
+    <link rel="stylesheet" href="<?php echo $burl ?>assets/css/style.css">
 
     <title>Dashboard Sidebar Menu</title> 
 </head>

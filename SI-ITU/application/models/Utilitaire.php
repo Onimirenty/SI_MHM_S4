@@ -60,5 +60,42 @@ class Utilitaire extends CI_Model
         );
         $this->db->insert('client_compte', $data);
     }
+    // Effectuer la requête pour rechercher les factures selon les critères spécifiés    public function rechercherFactures($date_debut, $date_fin, $num_facture, $montant_min, $montant_max)
+    public function rechercherFactures($date_debut, $date_fin, $num_facture, $montant_min, $montant_max,$idProduit)
+    {
+        $this->db->select('*');
+        $this->db->from('Facture');
+    
+        $date_debut = empty($date_debut) ? '1970-01-01' : $date_debut;
+        $date_fin = empty($date_fin) ? '2050-01-01' : $date_fin;
+    
+        $this->db->where('dates >=', $date_debut);
+        $this->db->where('dates <=', $date_fin);
+    
+        if (!empty($num_facture)) {
+            $this->db->like('NumFacture', $num_facture);
+        }
+        $trillion = bcpow('10', '12');
+        $montant_min = empty($montant_min) ? 0 : $montant_min;
+        $montant_max = empty($montant_max) ? $trillion : $montant_max;
+        
+        if (!empty($montant_min) && $montant_min >= 0) {
+            $this->db->where('prix >=', $montant_min);
+        } else {
+            show_error("valeur negative non permit");
+        }
+    
+        if (!empty($montant_max) && $montant_max >= 0) {
+            $this->db->where('prix <=', $montant_max);
+        } else {
+            show_error("valeur negative non permit");
+        }
+    
+        $query = $this->db->get();
+        return $query->result();
+    }
+    
+
+    
 }
 ?>
