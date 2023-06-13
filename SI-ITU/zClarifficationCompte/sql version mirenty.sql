@@ -525,7 +525,24 @@ VALUES ('Produit 1', 25.00, 100,'121212');
 
 --  insert into PieceJournale values (1,1,2,1,'20100405',1205,1205,'intitule no1',1);
 
+CREATE TABLE Facture (
+    id INTEGER AUTO_INCREMENT PRIMARY KEY ,
+    idCompte INTEGER,
+    idproduit INTEGER,
+    NumFacture VARCHAR(255),
+    vendeur VARCHAR(255),
+    acheteur VARCHAR(255),
+    idContact INT,
+    ModePayement VARCHAR(255),
+    prix NUMERIC(10,2),
+    nombre INT,
+    dates date null,
+    
+    FOREIGN KEY (idContact) REFERENCES Contact(id),
+    FOREIGN KEY (idproduit) REFERENCES Produit(id),
+    FOREIGN KEY (idCompte) REFERENCES Compte(id)
 
+);
 -- ------------------- New base a partir de 12 janvier 2023 ----------------
 -- Table client_compte
 CREATE TABLE client_compte (
@@ -579,3 +596,10 @@ VALUES
 (6, 'FAC-003', '2023-03-30', 10000.00),
 (6, 'FAC-004', '2023-03-31', 15000.00),
 (7, 'FAC-005', '2023-03-31', 2000.00);
+
+create table TVA
+(
+    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    taux DECIMAL(5,2) NOT NULL
+);
+insert into tva values (default,0.2);
