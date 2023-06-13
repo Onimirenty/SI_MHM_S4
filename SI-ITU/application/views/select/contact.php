@@ -17,6 +17,7 @@
          <th>Adresse</th>
          <th>telephone</th>
          <th>mail</th>
+         <th>Modifier / Supprimer </th>
        </tr>
        <?php foreach($contacts as $contact): ?>
          <tr>
@@ -25,8 +26,8 @@
            <td><?php echo $contact->telephone; ?></td>
            <td><?php echo $contact->mail; ?></td>
            <td>
-             <a href="<?php echo site_url('update/Update/contact?id='.$contact->id) ?>" class="btn btn-info">Modifier</a>
-             <a onclick="return confirm('EST TU SUR DE VOULOIR EFFACER CETTE LIGNE?')" href="<?php echo site_url('delete/Delete/contact?id='.$contact->id) ?>" class='btn btn-danger'>Effacer </a>
+           &nbsp;&nbsp;&nbsp;  <a href="<?php echo site_url('update/Update/contact?id='.$contact->id) ?>" class="btn btn-info"><i class="fas fa-edit"></i></a>
+           &nbsp;&nbsp;&nbsp;  <a onclick="return confirm('EST TU SUR DE VOULOIR EFFACER CETTE LIGNE?')" href="<?php echo site_url('delete/Delete/contact?id='.$contact->id) ?>" class='btn btn-danger'><i class="fas fa-trash"></i></a>
            </td>
          </tr>
        <?php endforeach; ?>

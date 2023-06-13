@@ -1,9 +1,4 @@
 <?php
-/* 
-    *    @author:    mirenty 1890,mickael 1819,Hasina 1762
-    *     S'il vous plait veuillez lire readMe.md
-    *
-*/
 defined('BASEPATH') or exit('No direct script access allowed');
 
 class Insert extends CI_Controller
@@ -40,6 +35,7 @@ class Insert extends CI_Controller
         
         if($redirection && $redirection2)
         {
+            // redirect('../select/produit.php');
             $this->load->view('select/infoComptabilite');
         }
         else
@@ -62,6 +58,7 @@ class Insert extends CI_Controller
         
         if($redirection)
         {
+            // redirect('../select/produit.php');
             $this->load->view('select/produit');
         }
         else
@@ -240,7 +237,7 @@ class Insert extends CI_Controller
             $this->load->view('insertErreur');
         }
     }
-    
+
     
     public function journalanouveau()
     {
@@ -255,7 +252,7 @@ class Insert extends CI_Controller
         $Taux = $this->input->post('Taux');
         $Debits = $this->input->post('Debits');
         $Credits = $this->input->post('Credits');
-        
+
         $data = array(
             'Jour' => $Jour,
             'NoPiece' => $NoPiece,
@@ -283,20 +280,20 @@ class Insert extends CI_Controller
             $this->load->view('insertErreur');
         }
     }
-    
+
     public function stock()
     {
         $nomproduit = $this->input->post('nomStocke');
         $prix = $this->input->post('prix');
         $nombre = $this->input->post('nombre');
-        
+
         $data = array(
             'nomstocke' => $nomproduit,
             'Prix' => $prix,
             'nombre' => $nombre,
         );
         $redirection=$this->db->insert('stocke',$data);
-        
+
         if($redirection)
         {
             $this->load->view('select/stocke');
@@ -305,7 +302,7 @@ class Insert extends CI_Controller
         {
             $this->load->view('insertErreur');
         }
-    
+
     }
     public function facture()
     {
@@ -318,6 +315,7 @@ class Insert extends CI_Controller
         $nombre = $this->input->post("nombre");
         $idContact = $this->input->post("idContact");
         
+
             $data = array(
                 'NumFacture' => $NumFacture,
                 'vendeur' => $vendeur,
@@ -346,14 +344,14 @@ class Insert extends CI_Controller
         $adresse = $this->input->post('adresse');
         $telephone = $this->input->post('telephone');
         $mail = $this->input->post('mail');
-        
+
         $data = array(
             'idSociete' => $idSociete,
             'adresse' => $adresse,
             'telephone' => $telephone,
             'mail' => $mail,
         );
-        
+
         $redirection=$this->db->insert('Contact',$data);
         if($redirection)
         {
@@ -364,7 +362,7 @@ class Insert extends CI_Controller
             $this->load->view('insertErreur');
         }
     }
-    
+
     public function Employe()
     {
         $nom = $this->input->post("nom");

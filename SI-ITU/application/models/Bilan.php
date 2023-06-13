@@ -16,6 +16,9 @@ class Bilan extends CI_Model
         $toto[] = $total_actif;
         $toto[] =$total_passif;
         return $resultat_bilan;
+        // echo 'Total des actifs : ' . $total_actif . '<br>';
+        // echo 'Total des passifs : ' . $total_passif . '<br>';
+        // echo 'Résultat du bilan : ' . $resultat_bilan;
     }
     public function TotalActif($dates)
     {

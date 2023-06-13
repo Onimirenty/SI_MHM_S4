@@ -20,6 +20,7 @@
                     <th>nomproduit</th>
                     <th>prix</th>
                     <th>nombre</th>
+                    <th>modifier/supprimer</th>
                 </tr>
                 
                 <?php foreach($produits as $produit): ?>
@@ -27,9 +28,10 @@
                         <td><?php echo $produit->nomProduit; ?></td>
                         <td><?php echo $produit->PrixUnitaire; ?></td>
                         <td><?php  echo $produit->nombre; ?></td>
+                        
                         <td>
-                            <a href="<?= site_url('update/Update/produit?id='.$produit->id) ?>" class="btn btn-info">Modifier</a>
-                            <a onclick="return confirm('EST TU SUR DE VOULOIR EFFACER CETTE LIGNE?')" href="<?= site_url('delete/Delete/produit?id='.$produit->id) ?>" class='btn btn-danger'>Effacer </a>
+                        &nbsp;&nbsp;&nbsp;    <a href="<?= site_url('update/Update/produit?id='.$produit->id) ?>" class="btn btn-info"><i class="fas fa-edit"></i></a>
+                        &nbsp;&nbsp;&nbsp;    <a onclick="return confirm('EST TU SUR DE VOULOIR EFFACER CETTE LIGNE?')" href="<?= site_url('delete/Delete/produit?id='.$produit->id) ?>" class='btn btn-danger'><i class="fas fa-trash"></i> </a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

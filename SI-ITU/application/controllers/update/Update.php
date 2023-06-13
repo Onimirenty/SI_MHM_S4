@@ -1,9 +1,4 @@
 <?php
-/* 
-    *    @author:    mirenty 1890,mickael 1819,Hasina 1762
-    *     S'il vous plait veuillez lire readMe.md
-    *
-*/
 defined('BASEPATH') or exit('No direct script access allowed');
 
 class Update extends CI_Controller
@@ -25,6 +20,8 @@ class Update extends CI_Controller
         );
         $this->db->where('id', $id);
         $this->db->update('InfoComptabilite', $data);
+
+        //  $this->load->view('update/InfoComptabilite');
         $data['categorie'] = "S";
         $data['content'] = "update/InfoComptabilite";
         $this->load->view('templates/template', $data);
@@ -45,6 +42,8 @@ class Update extends CI_Controller
 
         $this->db->where('id', $id);
         $this->db->update('Contact', $data);
+        // $this->load->view('update/contact');
+
         $data['categorie'] = "S";
         $data['content'] = "update/contact";
         $this->load->view('templates/template', $data);
@@ -72,7 +71,9 @@ class Update extends CI_Controller
 
         $this->db->where('id', $id);
         $this->db->update('Employe', $data);
-        
+
+        // $this->load->view('update/employer');
+
         $data['categorie'] = "S";
         $data['content'] = "update/employe";
         $this->load->view('templates/template', $data);
@@ -92,6 +93,8 @@ class Update extends CI_Controller
         $this->load->model('Facture');
         $this->Facture->update($id, $numFacture, $idContact, $vendeur, $acheteur, $prix, $modePaiement, $nombre, $dateFacture);
         
+        // $this->view('update/facture');
+
         $data['categorie'] = "S";
         $data['content'] = "update/facture";
         $this->load->view('templates/template', $data);
@@ -117,6 +120,9 @@ class Update extends CI_Controller
         );
         $this->db->where('id', $id);
         $this->db->update('identite_Entreprise', $data);
+
+        // $this->load->view('update/entreprise');
+
         $data['categorie'] = "S";
         $data['content'] = "update/Entreprise";
         $this->load->view('templates/template', $data);
@@ -137,6 +143,9 @@ class Update extends CI_Controller
 
         $this->db->where('id', $id);
         $this->db->update('Produit', $data);
+
+        // $this->load->view('update/produit');
+
         $data['categorie'] = "S";
         $data['content'] = "update/produit";
         $this->load->view('templates/template', $data);
@@ -157,6 +166,8 @@ class Update extends CI_Controller
 
         $this->db->where('id', $id);
         $this->db->update('stocke', $data);
+
+        // $this->load->view('update/stock');
 
         $data['categorie'] = "S";
         $data['content'] = "update/stock";

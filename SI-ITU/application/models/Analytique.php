@@ -6,7 +6,8 @@ class Analytique extends CI_model
         $c = $A / $B;
         return $c;
     }
-    
+
+    // Other functions in the Analytique class...
     
     function pourcentage($nombre, $pourcentage)
     {

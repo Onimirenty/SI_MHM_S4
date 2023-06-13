@@ -61,7 +61,7 @@ $fixe = $this->Analytique->pourcentage($chargetotal,20) ;
       labels: ['usine', 'plantation'],
       datasets: [{
         data: [<?php echo implode(',', $dataValues); ?>], // Les valeurs pour chaque catégorie
-        backgroundColor: ['#FF6384', '#36A2EB'] // Couleurs de remplissage pour chaque catégorie
+        backgroundColor: ['#7AA95C', '#36A2EB'] // Couleurs de remplissage pour chaque catégorie
       }]
     };
 

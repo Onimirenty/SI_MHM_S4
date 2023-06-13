@@ -1,9 +1,4 @@
 <?php
-/* 
-    *    @author:    mirenty 1890,mickael 1819,Hasina 1762
-    *     S'il vous plait veuillez lire readMe.md
-    *
-*/
 defined('BASEPATH') or exit('No direct script access allowed');
 
 class Formulaire extends CI_Controller

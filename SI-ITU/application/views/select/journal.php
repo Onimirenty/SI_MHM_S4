@@ -1,21 +1,3 @@
-
-      <style>
-          [class^="mai-"], [class*=" mai-"] {
-    font-family: 'maicons' !important;
-    speak: none;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 2;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-.h5, h5 {
-    font-size: 0.95rem;
-}
-      </style>
-
     <!-- Back to top button -->
     <div class="back-to-top"></div>
     
@@ -40,23 +22,11 @@
                 <div class="header mb-3">
                   <span class="mai-business"></span>
                 </div>
-                <h5>Journal d' Achats</h5>
+                <h5>Journal Achats <i class="fas fa-shopping-cart"></i></h5>
               
               </div>
             </div>
             </a> 
-            <a href="<?php echo site_url('select/Select/journalanouveau') ?>">
-                        
-            <div class="col-sm-6 col-lg-4 col-xl-3 py-3">
-              <div class="features">
-                <div class="header mb-3">
-                  <span class="mai-business"></span>
-                </div>
-
-                <h5>Journal d'à nouveau</h5>
-                   
-            </div>
-            </div>
             </a> 
             <a href="<?php echo site_url('select/Select/journalventes') ?>">
                         
@@ -65,7 +35,7 @@
                 <div class="header mb-3">
                   <span class="mai-business"></span>
                 </div>
-                <h5>Journal de ventes</h5>
+                <h5>Journal ventes <i class="fas fa-money-bill"></i></h5>
                      </div>
             </div>
 </a>
@@ -76,7 +46,7 @@
                 <div class="header mb-3">
                   <span class="mai-business"></span>
                 </div>
-                <h5>Journal de Banques</h5>
+                <h5>Journal Banques<i class="fas fa-building"></i></h5>
               </div>
             </div>
             </a>
@@ -87,7 +57,7 @@
                 <div class="header mb-3">
                   <span class="mai-business"></span>
                 </div>
-                <h5>Journal de caisse</h5>
+                <h5>Journal caisse<i class="fas fa-cash-register"></i></h5>
               </div>
             </div>
           </div>
