@@ -52,8 +52,8 @@ $contact = $this->db->get('Produit')->result();
       <td>v</td>
       <td rowspan="2"><?php echo $passif  ?></td>
       <?php
-            $var = $this->Analytique->pourcentage($passif,80) ;
-            $fixe = $this->Analytique->pourcentage($passif,20) ;
+            $var = $this->Analytique->pourcentage($passif,100) ;
+            $fixe = $this->Analytique->pourcentage($passif,100) ;
       ;?>
       
       <td><?php echo  $this->Analytique->pourcentage( $var,30) ?></td>

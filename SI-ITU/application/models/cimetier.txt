@@ -1,0 +1,84 @@
+<?php 
+class Balance extends CI_Model 
+{
+
+    public function getBalance() 
+    {
+        $this->db->select_sum('valeur');
+        $this->db->where('naturetransaction', 'debit');
+        $this->db->where_in('position', array('actif', 'charge'));
+        $query_debit = $this->db->get('transactions');
+        $total_debit = $query_debit->row()->valeur;
+    
+        $this->db->select_sum('valeur');
+        $this->db->where('naturetransaction', 'credit');
+        $this->db->where_in('position', array('passif', 'vente'));
+        $query_credit = $this->db->get('transactions');
+        $total_credit = $query_credit->row()->valeur;
+    
+        $balance = $total_debit - $total_credit;
+    
+        return $balance;
+    }
+    
+    public function get_all_transactions() {
+        $this->db->select('*');
+        $this->db->from('transactions');
+        $query = $this->db->get();
+        $transactions = $query->result();
+        
+        $balance = 0;
+        
+        foreach ($transactions as $transaction) {
+            if ($transaction->position == 'actif' || $transaction->position == 'charge') {
+                if ($transaction->natureTransaction == 'debit') {
+                    $balance -= $transaction->valeur;
+                } else {
+                    $balance += $transaction->valeur;
+                }
+            } elseif ($transaction->position == 'passif' || $transaction->position == 'charge' || $transaction->position == 'vente') {
+                if ($transaction->natureTransaction == 'debit') {
+                    $balance += $transaction->valeur;
+                } else {
+                    $balance -= $transaction->valeur;
+                }
+            }
+        }
+        
+        return $balance;
+    }
+    
+    public function getTransactions()
+    {
+        $sql = "SELECT t.*, c1.intitule_Sous_compte AS compte1, c2.intitule_Sous_compte AS compte2
+            FROM transactions t
+            LEFT JOIN compte c1 ON c1.id = t.idCompte1
+            LEFT JOIN compte c2 ON c2.id = t.idCompte2";
+        $query = $this->db->query($sql);
+        if ($query) 
+        {
+        $balance = 0;
+
+        foreach ($query->result() as $row) {
+            if($row->position == 'passif')
+            {
+                $diff = $row->naturetransaction == 'debit' ? $row->valeur * -1 : $row->valeur;
+            }
+            else
+            {
+                $diff = $row->naturetransaction == 'debit' ? $row->valeur : $row->valeur * -1;
+            }
+
+            $balance += $diff;
+            $alance=abs($balance);
+            echo "Opération : {$row->operation} | Compte 1 : {$row->compte1} |  Compte 2 : {$row->compte2} | Valeur : {$row->valeur} | nature : {$row->naturetransaction}  | Balance : {$alance}<br>";
+        }
+        return $balance;
+    } else {
+        echo "Erreur : Impossible de récupérer les transactions.";
+    }
+}
+
+    
+    
+}

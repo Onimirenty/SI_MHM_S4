@@ -1,9 +1,4 @@
 <?php
-/* 
-    *    @author:    mirenty 1890,mickael 1819,Hasina 1762
-    *     S'il vous plait veuillez lire readMe.md
-    *
-*/
 defined('BASEPATH') or exit('No direct script access allowed');
 
 class Update extends CI_Controller
@@ -21,18 +16,21 @@ class Update extends CI_Controller
             'NIF' => $NIF,
             'NSTAT' => $NSTAT,
             'NRCS' => $NRCS,
+
         );
         $this->db->where('id', $id);
         $this->db->update('InfoComptabilite', $data);
+
+        //  $this->load->view('select/InfoComptabilite');
         $data['categorie'] = "S";
         $data['content'] = "select/InfoComptabilite";
         $this->load->view('templates/template', $data);
     }
-    
+
     public function contact()
     {
         $id = $this->input->post('id');
-        
+
         $adresse = $this->input->post('adresse');
         $telephone = $this->input->post('telephone');
         $mail = $this->input->post('mail');
@@ -41,14 +39,16 @@ class Update extends CI_Controller
             'telephone' => $telephone,
             'mail' => $mail,
         );
-        
+
         $this->db->where('id', $id);
         $this->db->update('Contact', $data);
+        // $this->load->view('select/contact');
+
         $data['categorie'] = "S";
         $data['content'] = "select/contact";
         $this->load->view('templates/template', $data);
     }
-    
+
     public function employe()
     {
         $id = $this->input->post('id');
@@ -58,7 +58,7 @@ class Update extends CI_Controller
         $metier = $this->input->post('metier');
         $salaire = $this->input->post('salaire');
         $pouvoirExecutif = $this->input->post('pouvoirExecutif');
-        
+
         $data = array(
             'nom' => $nom,
             'prenom' => $prenom,
@@ -71,6 +71,9 @@ class Update extends CI_Controller
 
         $this->db->where('id', $id);
         $this->db->update('Employe', $data);
+
+        // $this->load->view('select/employer');
+
         $data['categorie'] = "S";
         $data['content'] = "select/employe";
         $this->load->view('templates/template', $data);
@@ -89,12 +92,15 @@ class Update extends CI_Controller
         $dateFacture = $this->input->post('dateFacture');
         $this->load->model('Facture');
         $this->Facture->update($id, $numFacture, $idContact, $vendeur, $acheteur, $prix, $modePaiement, $nombre, $dateFacture);
+        
+        // $this->view('select/facture');
+
         $data['categorie'] = "S";
         $data['content'] = "select/facture";
         $this->load->view('templates/template', $data);
-    
+
     }
-    
+
     public function identite_Entreprise()
     {
         $id = $this->input->post('id');
@@ -103,7 +109,7 @@ class Update extends CI_Controller
         $nomSociete = $this->input->post('nomSociete');
         $objetSociete = $this->input->post('objetSociete');
         $LieuExercice = $this->input->post('LieuExercice');
-        
+
         $data = array(
             'logo' => $logo,
             'dateCreation' => $dateCreation,
@@ -114,45 +120,55 @@ class Update extends CI_Controller
         );
         $this->db->where('id', $id);
         $this->db->update('Adentite_Entreprise', $data);
+
+        // $this->load->view('select/entreprise');
+
         $data['categorie'] = "S";
         $data['content'] = "select/entreprise";
         $this->load->view('templates/template', $data);
     }
-    
+
     public function produit()
     {
         $id = $this->input->post('id');
         $nomproduit = $this->input->post('nomproduit');
         $PrixUnitaire = $this->input->post('PrixUnitaire');
         $nombre = $this->input->post('nombre');
-        
+
         $data = array(
             'nomproduit' => $nomproduit,
             'PrixUnitaire' => $PrixUnitaire,
             'nombre' => $nombre,
         );
-        
+
         $this->db->where('id', $id);
         $this->db->update('produit', $data);
+
+        // $this->load->view('select/produit');
+
         $data['categorie'] = "S";
         $data['content'] = "select/produit";
         $this->load->view('templates/template', $data);
     }
-    
+
     public function stock()
     {
         $id = $this->input->post('id');
         $nomStocke = $this->input->post('nomStocke');
         $prix = $this->input->post('prix');
         $nombre = $this->input->post('nombre');
-        
+
         $data = array(
             'nomStocke' => $nomStocke,
             'Prix' => $prix,
             'nombre' => $nombre,
         );
+
         $this->db->where('id', $id);
         $this->db->update('stocke', $data);
+
+        // $this->load->view('select/stock');
+
         $data['categorie'] = "S";
         $data['content'] = "select/stock";
         $this->load->view('templates/template', $data);

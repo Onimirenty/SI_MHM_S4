@@ -111,6 +111,7 @@ class Compte extends CI_Model
 
         public function getAllCompteAsAssosiativeArray()
         {
+            // $this->load->model('Dao');
                 $this->Dao->getAll('compte');
         }
 

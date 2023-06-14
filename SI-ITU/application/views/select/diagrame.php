@@ -21,7 +21,7 @@ $var =  $chargetotal;
 <body>
 <h4 style="color: #000000a8;">
     <?php echo $dates; ?>
-    <?php echo form_open('select/Select/sr'); ?>
+    <?php echo form_open('select/Select/diagrame'); ?>
     <input type="date" name="inputDate">
     <input type="submit" value="Valider">
     <?php echo form_close(); ?>
@@ -52,7 +52,7 @@ $var =  $chargetotal;
 
     // Données du diagramme en PHP
     <?php
-      $dataValues = [$this->Analytique->pourcentage( $var,30),$this->Analytique->pourcentage( $var,70)];
+      $dataValues = array( $this->Analytique->pourcentage( $var,30),$this->Analytique->pourcentage( $var,70));
     ?>
 
     // Création des données du diagramme en JavaScript

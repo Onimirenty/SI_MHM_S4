@@ -16,6 +16,7 @@ $stocke = $query->result();
           <th>nom Stocke</th>
           <th>prix</th>
           <th>nombre</th>
+          <th>Modifier / Supprimer </th>
         </tr>
         <?php foreach($stocke as $stockes): ?>
           <tr>
@@ -23,8 +24,8 @@ $stocke = $query->result();
             <td><?php echo $stockes->Prix; ?></td>
             <td><?php echo $stockes->nombre; ?></td>
             <td>
-              <a href="<?php echo site_url('update/Update/stock?id='.$stockes->id) ?>" class="btn btn-info">Modifier</a>
-              <a onclick="return confirm('EST TU SUR DE VOULOIR EFFACER CETTE LIGNE?')" href="<?php echo site_url('delete/Delete/stock?id='.$stockes->id) ?>" class='btn btn-danger'>Effacer </a>
+             &nbsp;&nbsp;&nbsp; <a href="<?php echo site_url('update/Update/stock?id='.$stockes->id) ?>" class="btn btn-info"><i class="fas fa-edit"></i></a>
+             &nbsp;&nbsp;&nbsp; <a onclick="return confirm('EST TU SUR DE VOULOIR EFFACER CETTE LIGNE?')" href="<?php echo site_url('delete/Delete/stock?id='.$stockes->id) ?>" class='btn btn-danger'><i class="fas fa-trash"></i></a>
             </td>
           </tr>
         <?php endforeach; ?>

@@ -16,6 +16,7 @@
           <th>metier</th>
           <th>salaire</th>
           <th>pouvoirExecutif</th>
+          <th>Modifier / Supprimer </th>
         </tr>
         <?php foreach($employe as $employes): ?>
           <tr>
@@ -26,8 +27,8 @@
             <td><?php echo $employes->salaire; ?></td>
             <td><?php echo $employes->pouvoirExecutif; ?></td>
             <td>
-              <a href="<?php echo site_url('update/Update/employe?id='.$employes->id) ?>" class="btn btn-info">Modifier</a>
-              <a onclick="return confirm('EST TU SUR DE VOULOIR EFFACER CETTE LIGNE?')" href="<?php echo site_url('delete/Delete/employe?id='.$employes->id) ?>" class='btn btn-danger'>Effacer </a>
+             &nbsp;&nbsp;&nbsp; <a href="<?php echo site_url('update/Update/employe?id='.$employes->id) ?>" class="btn btn-info"><i class="fas fa-edit"></i></a>
+             &nbsp;&nbsp;&nbsp; <a onclick="return confirm('EST TU SUR DE VOULOIR EFFACER CETTE LIGNE?')" href="<?php echo site_url('delete/Delete/employe?id='.$employes->id) ?>" class='btn btn-danger'><i class="fas fa-trash"></i> </a>
             </td>
           </tr>
         <?php endforeach; ?>
