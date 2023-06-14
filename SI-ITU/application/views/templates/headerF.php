@@ -7,80 +7,116 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!----======== CSS ======== -->
-    <link rel="stylesheet" href="<?php echo $burl ?>assets/css/style.css">
-    
-    <!----===== Boxicons CSS ===== -->
-    <!-- <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet"> -->
-    <link rel="stylesheet" href="<?php echo $burl ?>assets/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="<?php echo $burl ?>assets/css/left.css">
-    <link rel="stylesheet" href="<?php echo $burl ?>assets/css/style.css">
+    <link rel="stylesheet" href="<?php echo $burl ?>/assets/css/style.css">
 
-    <title>Dashboard Sidebar Menu</title> 
+    <!----===== Boxicons CSS ===== -->
+    <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?php echo $burl ?>/assets/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $burl ?>/assets/css/left.css">
+    <link rel="stylesheet" href="<?php echo $burl ?>/assets/css/style.css">
+    <link rel="stylesheet" href="<?php echo $burl ?>/assets/fontawesome-5/css/all.min.css">
+   
+   <title>SI</title> 
 </head>
 <body>
-    <nav class="sidebar close">
-        <header>
-            <div class="image-text">
-                <span class="image">
-                    <img src="<?php echo $burl ?>/assets/img/images/logo.png" alt="">
-                </span>
+   <nav class="sidebar close">
+       <header>
+           <div class="image-text">
+               <span class="image">
+                   <img src="<?php echo $burl ?>/assets/img/images/logo.png" alt="">
+               </span>
 
-                <div class="text logo-text">
-                    <span class="name">HMM</span>
-                    <span class="profession">Web developer</span>
-                </div>
-            </div>
+               <div class="text logo-text">
+                   <span class="name">HMM</span>
+                   <span class="profession">Web developer</span>
+               </div>
+           </div>
 
-            <i class="bx bx-chevron-right toggle"></i>
-        </header>
+           <i class="bx bx-chevron-right toggle"><i class="fas fa-chevron-right"></i></i>
+       </header>
 
-        <div class="menu-bar">
-            <div class="menu">
+       <div class="menu-bar">
+           <div class="menu">
 
-                <li class="search-box">
-                    <i class="bx bx-search icon"></i>
-                    <input type="text" placeholder="Search...">
-                </li>
+               <li class="search-box">
+                   <i class="bx bx-search icon"><i class="fas fa-search"></i></i>
+                   <input type="text" placeholder="Search...">
+               </li>
 
-                <ul class="menu-links">
-                    <li class="nav-link">
-                        <a href="<?php echo site_url('welcome') ?>">
-                            <i class="bx bx-bar-chart-alt-2 icon"></i>
-                            <span class="text nav-text">Comptabilite</span>
-                        </a>
-                    </li>
+               <ul class="menu-links">
+                   <li class="nav-link">
+                       <a href="<?php echo site_url('welcome') ?>">
+                           <i class="bx bx-bar-chart-alt-2 icon"><i class="fas  fa-hand-holding-usd"></i></i>
+                           <span class="text nav-text">Comptabilite</span>
+                       </a>
+                   </li>
 
-                    <li class="nav-link">
-                        <a href="<?php echo site_url('select/Select/entreprise') ?>">
-                            <i class="bx bx-home-alt icon"></i>
-                            <span class="text nav-text">Identite Entreprise</span>
-                        </a>
-                    </li>
+                   <li class="nav-link">
+                       <a href="<?php echo site_url('select/Select/entreprise') ?>">
+                           <i class="bx bx-home-alt icon"><i class="fas fa-home"></i></i>
+                           <span class="text nav-text">Identité Entreprise</span>
+                       </a>
+                   </li>
 
-                    <li class="nav-link">
-                        <a href="<?php echo site_url('select/Select/employer') ?>">
-                            <i class="bx bx-user icon"></i>
-                            <span class="text nav-text">Employe</span>
-                        </a>
-                    </li>
+                   <li class="nav-link">
+                       <a href="<?php echo site_url('select/Select/employer') ?>">
+                           <i class="bx bx-user icon"><i class="fas fa-users"></i></i>
+                           <span class="text nav-text">Employe</span>
+                       </a>
+                   </li>
 
-                    <li class="nav-link">
-                        <a href="<?php echo site_url('select/Select/contact') ?>">
-                            <i class="bx bx-phone icon"></i>
-                            <span class="text nav-text">Contact</span>
-                        </a>
-                    </li>
+                   <li class="nav-link">
+                       <a href="<?php echo site_url('select/Select/contact') ?>">
+                           <i class="bx bx-phone icon"><i class="fas fa-phone"></i></i>
+                           <span class="text nav-text">Contact</span>
+                       </a>
+                   </li>
 
-                    <li class="nav-link">
-                        <a href="<?php echo site_url('select/Select/Produit') ?>">
-                            <i class="bx bx-wallet icon"></i>
-                            <span class="text nav-text">Produits</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+                   <li class="nav-link">
+                       <a href="<?php echo site_url('select/Select/Produit') ?>">
+                           <i class="bx bx-wallet icon"><i class="fas fa-tag"></i></i>
+                           <span class="text nav-text">Produits</span>
+                       </a>
+                   </li>
+                   
+                   <li class="nav-link">
+                       <a href="<?php echo site_url('select/Select/centre') ?>">
+                           <i class="bx bx-wallet icon"><i class="fas fa-file-invoice"></i></i>
+                           <span class="text nav-text">charge/p/centre</span>
+                       </a>
+                   </li>
 
-            <div class="bottom-content">
+                   <li class="nav-link">
+                       <a href="<?php echo site_url('select/Select/chargeProduit') ?>">
+                           <i class="bx bx-wallet icon"><i class="fas fa-file-invoice-dollar"></i></i>
+                           <span class="text nav-text">charge/produit </span>
+                       </a>
+                   </li>
+                
+                   <li class="nav-link">
+                       <a href="<?php echo site_url('select/Select/seuilRentabilite') ?>">
+                           <i class="bx bx-wallet icon"><i class="fas fa-chart-line"></i></i>
+                           <span class="text nav-text">seuil Rentabilité</span>
+                       </a>
+                   </li>
+                   <li class="nav-link">
+                       <a href="<?php echo site_url('select/Select/diagrame') ?>">
+                           <i class="bx bx-wallet icon"><i class="fas fa-chart-pie"></i></i>
+                           <span class="text nav-text">Diagrame 1</span>
+                       </a>
+                   </li>
+                   <li class="nav-link">
+                       <a href="<?php echo site_url('select/Select/diagrame2') ?>">
+                           <i class="bx bx-wallet icon"><i class="fas fa-chart-pie"></i></i>
+                           <span class="text nav-text">Diagramme 2</span>
+                       </a>
+                   </li>
+
+
+
+               </ul>
+           </div>
+                   <div class="bottom-content">
                 <li class="">
                     <a href="#">
                         <i class="bx bx-log-out icon"></i>

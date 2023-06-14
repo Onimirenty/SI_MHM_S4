@@ -18,7 +18,7 @@ $identite_Entreprise = $query->result();
         <th>Objet de la société</th>
         <th>Date de création</th>
         <th>Lieu d'exercice</th>
-        <th>ID contact</th>
+        <th>Modifier / Supprimer </th>            
       </tr>
       <?php foreach($identite_Entreprise as $identite): ?>
         <tr>
@@ -28,8 +28,8 @@ $identite_Entreprise = $query->result();
           <td><?php echo $identite->dateCreation; ?></td>
           <td><?php echo $identite->LieuExercice; ?></td>
           <td>
-            <a href="<?php echo site_url('update/Update/Entreprise?id='.$identite->id) ?>" class="btn btn-info">Modifier</a>
-            <a onclick="return confirm('Es-tu sûr de vouloir effacer cette ligne ?')" href="<?php echo site_url('delete/Delete/identite_Entreprise?id='.$identite->id) ?>" class="btn btn-danger">Effacer</a>
+          &nbsp;&nbsp;&nbsp; <a href="<?php echo site_url('update/Update/Entreprise?id='.$identite->id) ?>" class="btn btn-info"><i class="fas fa-edit"></i></a>
+           &nbsp;&nbsp;&nbsp; <a onclick="return confirm('Es-tu sûr de vouloir effacer cette ligne ?')" href="<?php echo site_url('delete/Delete/identite_Entreprise?id='.$identite->id) ?>" class="btn btn-danger"><i class="fas fa-trash"></i></a>
           </td>
         </tr>
       <?php endforeach; ?>

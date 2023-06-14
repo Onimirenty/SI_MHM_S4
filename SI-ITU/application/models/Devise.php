@@ -1,10 +1,6 @@
 <?php 
 class Desise extends CI_Model 
     {
-        /*
-            converti une valeur en une autre devise selon une date
-            a condition que les deux existent dans la base 
-        */
         function trade($valeur,$date,$devise)
         {
             $de=strtolower($devise);

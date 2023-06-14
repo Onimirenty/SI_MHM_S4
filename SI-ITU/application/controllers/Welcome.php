@@ -20,16 +20,17 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
+		// $this->load->view('welcome_message');
 		$identite_entreprise = $this->db->get('identite_Entreprise')->result();
         $devise = $this->db->get('Devise')->result();
-        
+
         $data['identite_entreprise'] = $identite_entreprise;
         $data['devise'] = $devise;
-		$data['content'] = "select/contact";
+		$data['content'] = "select/infoComptabilite";
 		$data['categorie'] = "S";
 		$this->load->view('templates/template',$data);
+        // $this->load->view('select/infoComptabilite',$data);
 		
-	}
-		
+	}	
 	
 }

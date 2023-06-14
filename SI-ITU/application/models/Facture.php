@@ -101,12 +101,11 @@ class Facture extends CI_Model {
     public function setIdproduit($idproduit){
         $this->idproduit = $idproduit;
     }
-    public function setstocke($idstocke){
+    public function setstocke($stocke){
         $this->idstocke = $idstocke;
-        
     }
     public function update($id, $numFacture, $idContact, $vendeur, $acheteur,
-    $prix, $modePaiement, $nombre, $dateFacture)
+     $prix, $modePaiement, $nombre, $dateFacture)
     {
         $data = array(
             'vendeur' => $vendeur,

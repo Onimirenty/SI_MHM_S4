@@ -1,9 +1,7 @@
-<?php
-$burl = site_url();
+<?php 
+    $burl= site_url();
 ?>
-<html lang="en">
-
-<head>
+<html lang="en"><head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,9 +15,8 @@ $burl = site_url();
     <link rel="stylesheet" href="<?php echo $burl ?>/assets/css/left.css">
     <link rel="stylesheet" href="<?php echo $burl ?>/assets/css/style.css">
 
-    <title>Dashboard Sidebar Menu</title>
+    <title>Dashboard Sidebar Menu</title> 
 </head>
-
 <body>
     <nav class="sidebar close">
         <header>
@@ -74,7 +71,7 @@ $burl = site_url();
                         </a>
                     </li>
 
-
+                    
 
 
                     <li class="nav-link">
@@ -99,65 +96,65 @@ $burl = site_url();
         </div>
 
     </nav>
-    <section class="home">
+<section class="home">
 
 
         <div class="row">
             <div class="col-md-12">
 
                 <a href="#">
-                    <div class="col-sm-6">
-                        <div class="textdiv" style="margin-left: -63%;">
-                            <img src="<?php echo $burl ?>assets/img/images/societe.png" style="width: 45%;">
-                            <p>Societe</p>
-                        </div>
+                <div class="col-sm-6">
+                    <div class="textdiv" style="margin-left: -63%;">
+                        <img src="<?php echo $burl ?>assets/img/images/societe.png" style="width: 45%;">
+                        <p>Societe</p>
                     </div>
-                </a>
+                </div>
+            </a>
 
                 <a href="#">
-                    <div class="col-sm-6">
-                        <div class="textdiv" style="
+                <div class="col-sm-6">
+                    <div class="textdiv" style="
 ">
-                            <img src="<?php echo $burl ?>assets/img/images/bilan.png" style="width: 45%;">
-                            <p>Bilan</p>
-                        </div>
+                        <img src="<?php echo $burl ?>assets/img/images/bilan.png" style="width: 45%;">
+                        <p>Bilan</p>
                     </div>
-                </a>
-                <a href="#">
-                    <div class="col-sm-6">
-                        <div class="btndiv">
-                            <div class="textdiv" style="
+                </div>
+            </a>
+        <a href="#">
+                <div class="col-sm-6">
+                    <div class="btndiv">
+                        <div class="textdiv" style="
                         margin-left: 84%;
                     ">
-                                <img src="<?php echo $burl ?>assets/img/images/resultat.png" style="width: 45%;">
-                                <p>Comptes</p>
-                            </div>
-                        </div>
+                                                <img src="<?php echo $burl ?>assets/img/images/resultat.png" style="width: 45%;">
+                                            <p>Comptes</p>
+                                        </div>
                     </div>
-                </a>
-                <a href="#">
-                    <div class="col-sm-6">
-                        <div class="textdiv" style="
+                </div>
+            </a>
+            <a href="#">
+                <div class="col-sm-6">
+                    <div class="textdiv" style="
                     margin-left: 171%;
                     width: 141%;
                 ">
-                            <img src="<?php echo $burl ?>assets/img/images/balance.png" style="width: 45%;">
-                            <p>Balance</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="<?php echo site_url('select/Select/journal') ?>">
-                    <div class="col-sm-6">
-                        <div class="btndiv">
-                            <div class="textdiv" style="
+                                            <img src="<?php echo $burl ?>assets/img/images/balance.png" style="width: 45%;">
+                                        <p>Balance</p>
+                                      </div>
+                </div>
+            </a>
+            <a href="<?php echo site_url('select/Select/journal') ?>">
+                <div class="col-sm-6">
+                    <div class="btndiv">
+                        <div class="textdiv" style="
                         margin-left: 244%;
                     ">
-                                <img src="<?php echo $burl ?>assets/img/images/journal.png" style="width: 45%;">
-                                <p>Journal</p>
-                            </div>
-                        </div>
+                                                <img src="<?php echo $burl ?>assets/img/images/journal.png" style="width: 45%;">
+                                            <p>Journal</p>
+                                        </div>
                     </div>
-                </a>
+                </div>
+            </a>
 
 
             </div>
@@ -165,43 +162,42 @@ $burl = site_url();
         </div>
 
 
+        
 
-
-
+        
         <div class="row">
             <div class="col-md-12">
 
-                <a href="<?php echo site_url('select/Select/contact') ?>">
-                    <div class="col-sm-6">
-                        <div class="textdiv" style="
+            <a href="<?php echo site_url('select/Select/contact') ?>">
+                         <div class="col-sm-6">
+                    <div class="textdiv" style="
     background-color: #c7dbff00;
 ">
-                            <img src="<?php echo $burl ?>assets/img/images/retour.png" style="width: 45%;">
-                            <p>Retour</p>
-                        </div>
+    <img src="<?php echo $burl ?>assets/img/images/retour.png" style="width: 45%;">
+                          <p>Retour</p>
                     </div>
-                </a>
-            </div>
-        </div>
-
-
-
+                </div>
+            </a>    
+</div>
+</div>
+        
+        
+        
 
         <style>
             body {
                 font-family: montserrat, arial, verdana;
             }
-
             /*form styles*/
-
-            #msform {
+       
+                #msform {
                 width: 690px;
                 margin: 50px auto;
                 text-align: center;
                 position: relative;
-            }
-
-            #msform fieldset {
+                }
+              
+                #msform fieldset {
                 background: white;
                 border: 0 none;
                 border-radius: 3px;
@@ -210,19 +206,16 @@ $burl = site_url();
                 box-sizing: border-box;
                 width: 80%;
                 margin: 0 10%;
-
+                
                 /*stacking fieldsets above each other*/
                 position: relative;
             }
-
             /*Hide all except first fieldset*/
             #msform fieldset:not(:first-of-type) {
                 display: none;
             }
-
             /*inputs*/
-            #msform input,
-            #msform textarea {
+            #msform input, #msform textarea {
                 padding: 15px;
                 border: 1px solid #ccc;
                 border-radius: 3px;
@@ -233,7 +226,6 @@ $burl = site_url();
                 color: #2C3E50;
                 font-size: 18px;
             }
-
             /*buttons*/
             #msform .action-button {
                 width: 100px;
@@ -245,15 +237,12 @@ $burl = site_url();
                 cursor: pointer;
                 padding: 10px;
                 margin: 10px 5px;
-                text-decoration: none;
-                font-size: 18px;
+              text-decoration: none;
+              font-size: 18px;
             }
-
-            #msform .action-button:hover,
-            #msform .action-button:focus {
+            #msform .action-button:hover, #msform .action-button:focus {
                 box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
             }
-
             /*headings*/
             .fs-title {
                 font-size: 15px;
@@ -261,14 +250,12 @@ $burl = site_url();
                 color: #2C3E50;
                 margin-bottom: 10px;
             }
-
             .fs-subtitle {
                 font-weight: normal;
                 font-size: 27px;
                 color: #666;
                 margin-bottom: 20px;
             }
-
             /*progressbar*/
             #progressbar {
                 margin-bottom: 30px;
@@ -276,17 +263,15 @@ $burl = site_url();
                 /*CSS counters to number the steps*/
                 counter-reset: step;
             }
-
             #progressbar li {
-                list-style-type: none;
-                color: black;
-                text-transform: uppercase;
-                font-size: larger;
-                width: 33.33%;
-                float: left;
-                position: relative;
-            }
-
+            list-style-type: none;
+            color: black;
+            text-transform: uppercase;
+            font-size: larger;
+            width: 33.33%;
+            float: left;
+            position: relative;
+        }
             #progressbar li:before {
                 content: counter(step);
                 counter-increment: step;
@@ -299,7 +284,7 @@ $burl = site_url();
                 border-radius: 3px;
                 margin: 0 auto 5px auto;
             }
-
+            
             /*progressbar connectors*/
             #progressbar li:after {
                 content: '';
@@ -309,52 +294,49 @@ $burl = site_url();
                 position: absolute;
                 left: -50%;
                 top: 9px;
-                z-index: -1;
-                /*put it behind the numbers*/
+                z-index: -1; /*put it behind the numbers*/
             }
-
             #progressbar li:first-child:after {
                 /*connector not needed before the first step*/
-                content: none;
+                content: none; 
             }
-
             /*marking active/completed steps green*/
             /*The number of the step and the connector before it = green*/
-            #progressbar li.active:before,
-            #progressbar li.active:after {
+            #progressbar li.active:before,  #progressbar li.active:after{
                 background: #27AE60;
                 color: white;
             }
-
             label {
                 margin-right: 85%;
                 display: inline-block;
                 margin-bottom: 0.5rem;
             }
-        </style>
+            
+            
+            </style>
+        
+        <!-- multistep form -->
+       <form id="msform" action="<?php echo site_url('insert/Insert/contact')?>" method="POST"><!-- progressbar -->
+       
+       <!-- fieldsets -->
+            <fieldset><h2 class="fs-title">CONTACT DE LA SOCIETE</h2>
+              <h3 class="fs-subtitle">Insertion Contact</h3>
+<p>liste deroulante societe<p>
 
+    <input type="hidden" name="idSociete"value=1>
+              
+<label for="metier">Adresse: </label>
+              <input type="text" name="adresse" />
 
-        <form id="msform" action="<?php echo site_url('insert/Insert/contact') ?>" method="POST"><!-- progressbar -->
-            <fieldset>
-                <h2 class="fs-title">CONTACT DE LA SOCIETE</h2>
-                <h3 class="fs-subtitle">Insertion Contact</h3>
-                <p>liste deroulante societe
-                <p>
-                    
-                    <input type="hidden" name="idSociete" value=1>
-                    
-                    <label for="metier">Adresse: </label>
-                    <input type="text" name="adresse" />
-                    <label for="metier">Telephone: </label>
-                    <input type="tel" name="telephone" />
-                    <label for="mail">Email: </label>
-                    <input type="mail" name="mail" />
-                    <button type="submit" class="submit action-button" target="_top">Submit</button>
+<label for="metier">Telephone: </label>
+              <input type="text" name="telephone" />
+           <label for="mail">Email: </label>
+              <input type="mail" name="mail" />
+            <button type="submit" class="submit action-button" target="_top">Submit</button>
             </fieldset>
-        </form>
+          </form>
 
-        <script src="<?php echo $burl ?>assets/js/script.js"></script>
+    <script src="<?php echo $burl ?>assets/js/script.js"></script>
 
 </body>
-
 </html>

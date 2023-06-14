@@ -1,7 +1,6 @@
-<?php
+<?php 
 class Dao extends CI_Model 
 {
-    private $conn;
 
     public function __construct() {
         $this->conn = null;
@@ -53,8 +52,8 @@ class Dao extends CI_Model
         }
         return $array;
     }
-    
-    public function getByIdAsArray($tableName, $id) {
+
+    public function getById($tableName, $id) {
         $pg = new Dao();
         $result = $pg->query("SELECT * FROM {$tableName} WHERE id={$id}");
         $array = array();
@@ -63,17 +62,7 @@ class Dao extends CI_Model
         }
         return $array;
     }
-    public function getById($tableName, $id) {
-        $this->db->where('id', $id);
-        $query = $this->db->get($tableName);
-    
-        if ($query && $query->num_rows() > 0) {
-            return $query->row();
-        }
-    
-        return null;
-    }
-    
+
     public function getByColumn($tableName, $columnName) {
         $pg = new Dao();
         $result = $pg->query("SELECT {$columnName} FROM {$tableName}");
@@ -110,8 +99,9 @@ class Dao extends CI_Model
         return $array;
     }
 
-    function ajouter_virgules($tab, $auto_increment_column = null) {
-        $elements = array();
+    function ajouter_virgules($tab, $auto_increment_column = null) 
+    {
+        $elements =array( );
         foreach ($tab as $element) {
             if ($element != $auto_increment_column) {
                 $elements[] = strval($element);
@@ -119,40 +109,31 @@ class Dao extends CI_Model
         }
         return implode(',', $elements);
     }
-
-    function insert1($table_name, $values) {
+        function insert1($table_name, $values) {
+            // $req = "trade_view.dates = %s and trade_view.devise_etrangere = %f";
+            // $result = sprintf($req, $date, $de);
         $columns = array_keys($values);
         $value_list = array_values($values);
-        $column_string = $this->ajouter_virgules($columns);
-        $value_string = $this->ajouter_virgules($value_list);
-        $query = "INSERT INTO {$table_name} ({$column_string}) VALUES ({$value_string})";
+        $column_string = ajouter_virgules($columns);
+        $value_string = ajouter_virgules($value_list);
+        $query = "INSERT INTO $table_name . ($column_string) VALUES ($value_string)";
         // exécution de la requête SQL avec la méthode appropriée
     }
 
-    function insertAssociativeArray($table_name, $values) {
+    function insertAssociativeArray($table_name, $values)   
+    {
         $this->db->insert($table_name, $values);
 
-        if ($this->db->affected_rows() > 0) {
+        if ($this->db->affected_rows() > 0) 
+        {
             return true;
-        } else {
+        } 
+        else 
+        {
             return false;
-        }
+        }   
     }
 
-    public function deleteRow($tableName, $condition) {
-        $this->connexion();
-        $query = "DELETE FROM {$tableName} WHERE {$condition}";
-        $result = pg_query($this->conn, $query);
-        pg_free_result($result);
-        pg_close($this->conn);
-    }
-    
-    public function updateColumnValue($tableName, $column, $value, $condition) {
-        $this->connexion();
-        $query = "UPDATE {$tableName} SET {$column} = '{$value}' WHERE {$condition}";
-        $result = pg_query($this->conn, $query);
-        pg_free_result($result);
-        pg_close($this->conn);
-    }
+
 }
 ?>
