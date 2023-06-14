@@ -1,22 +1,26 @@
-<?php 
-    $burl= site_url();
+<?php
+$burl = site_url();
 ?>
-<html lang="en"><head>
+<html lang="en">
+
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!----======== CSS ======== -->
-    <link rel="stylesheet" href="<?php echo $burl ?>/assets/css/style.css">
+    <link rel="stylesheet" href="<?php echo $burl ?>assets/css/style.css">
 
     <!----===== Boxicons CSS ===== -->
     <!-- <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet"> -->
-    <link rel="stylesheet" href="<?php echo $burl ?>/assets/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="<?php echo $burl ?>/assets/css/left.css">
-    <link rel="stylesheet" href="<?php echo $burl ?>/assets/css/style.css">
+    <link rel="stylesheet" href="<?php echo $burl ?>assets/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $burl ?>assets/css/left.css">
+    <link rel="stylesheet" href="<?php echo $burl ?>assets/css/style.css">
 
-    <title>Dashboard Sidebar Menu</title> 
+
+    <title>Dashboard Sidebar Menu</title>
 </head>
+
 <body>
     <nav class="sidebar close">
         <header>
@@ -91,87 +95,81 @@
 
         </div>
 
-    </nav><section class="home">
-      
-<div class="row">
+    </nav>
+    <section class="home">
+
+        <div class="row">
             <div class="col-md-12">
-                    <div class="col-sm-6">
-                        <div class="textdiv" style="margin-left: -63%;">
+                <div class="col-sm-6">
+                    <div class="textdiv" style="margin-left: -63%;">
                         <a href="<?php echo site_url('select/Select/entreprise') ?>">
-               
-                        <img src="<?php echo $burl ?>assets/img/images/societe.png" style="width: 55%;">
-           
-                        <p>Societe</p>
+
+                            <img src="<?php echo $burl ?>assets/img/images/societe.png" style="width: 55%;">
+
+                            <p>Societe</p>
                         </a>
-           
-                    </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="textdiv" style="margin-left: 4%;">
-                        <a href="<?php echo site_url('select/Select/compte') ?>">
-           
-                        <img src="<?php echo $burl ?>assets/img/images/resultat.png" style="width: 55%;">
-                            <p>Comptes</p>
-                            </a>
-           
-                        </div>
-                    </div>
-                
-                    <div class="col-sm-6"style="margin-left: 5%;">
-                        <div class="textdiv">
-                        <a href="<?php echo site_url('select/Select/balance') ?>">
-           
-                        <img src="<?php echo $burl ?>assets/img/images/balance.png" style="width: 51%;">
-                            <p>Balance</p>
-                            </a>
-           
-                        </div>
-                    </div>
-                    <div class="col-sm-6"style="margin-left: 4%;">
-                    <a href="<?php echo site_url('select/Select/journal') ?>">
-               
-                    <div class="textdiv" >
-                       
-                        <img src="<?php echo $burl ?>assets/img/images/journal.png" style="width: 55%;">
-                            <p>Journal</p>
-                            
-                    </a>
 
-                        </div>
-                    </div>
-                    <div class="col-sm-6"style="margin-left: 4%;">
-                    <div class="textdiv">
-                    <a href="<?php echo site_url('select/Select/bilan') ?>">
-                        
-                    <img src="<?php echo $burl ?>assets/img/images/bilan.png" style="width: 55%;">
-                            <p>Bilan</p>
-                            </a>
-
-                        </div>
-                    </div>
-            
-        </div>
-    </div>
-
-    <div class="row">
-       
-            
-        <div class="col-md-12">
-            <a href="<?php echo site_url('Formulaire/Formulaire/infoComptabilite') ?>"> <div class="col-sm-6">
-                <div class="textdiv" style="background-color: #c7dbff00;">
-                        <p style=" background: #005397;
-    color: white;
-    border-radius: 6%;
-    height: 73%;
-    width: 99%;
-    outline: none;
-    border: none;
-    border-radius: 6px;
-    font-size: 17px;">Ajouter</p>
                     </div>
                 </div>
-            </a>    
-        </div>
-    </div>
+                <div class="col-sm-6">
+                    <div class="textdiv" style="margin-left: 4%;">
+                        <a href="<?php echo site_url('select/Select/compte') ?>">
 
-<script src="<?php echo $burl ?>assets/js/script.js"></script>
+                            <img src="<?php echo $burl ?>assets/img/images/resultat.png" style="width: 55%;">
+                            <p>Comptes</p>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div class="col-sm-6" style="margin-left: 5%;">
+                    <div class="textdiv">
+                        <a href="<?php echo site_url('select/Select/balance') ?>">
+
+                            <img src="<?php echo $burl ?>assets/img/images/balance.png" style="width: 51%;">
+                            <p>Balance</p>
+                        </a>
+
+                    </div>
+                </div>
+                <div class="col-sm-6" style="margin-left: 4%;">
+                    <a href="<?php echo site_url('select/Select/journal') ?>">
+
+                        <div class="textdiv">
+
+                            <img src="<?php echo $burl ?>assets/img/images/journal.png" style="width: 55%;">
+                            <p>Journal</p>
+
+                    </a>
+
+                </div>
+            </div>
+            <div class="col-sm-6" style="margin-left: 4%;">
+                <div class="textdiv">
+                    <a href="<?php echo site_url('select/Select/bilan') ?>">
+
+                        <img src="<?php echo $burl ?>assets/img/images/bilan.png" style="width: 55%;">
+                        <p>Bilan</p>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+        </div>
+
+        <div class="row">
+
+
+            <div class="col-md-12">
+                <a href="<?php echo site_url('Formulaire/Formulaire/infoComptabilite') ?>">
+                    <div class="col-sm-6">
+                        <div class="textdiv" style="background-color: #c7dbff00;">
+                            <p style=" background: #005397;color: white;border-radius: 6%;height: 73%;width: 99%;outline: none;border: none;border-radius: 6px;font-size: 17px;">Ajouter</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        
+        <script src="<?php echo $burl ?>assets/js/script.js"></script>
